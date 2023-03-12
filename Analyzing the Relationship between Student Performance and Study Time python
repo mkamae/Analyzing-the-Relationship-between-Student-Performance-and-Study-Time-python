@@ -1,0 +1,17 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load the data into a pandas dataframe
+df = pd.read_csv('student_performance.csv')
+
+# Create a scatter plot of the relationship between study time and performance
+sns.scatterplot(data=df, x='study_time', y='performance')
+plt.title('Relationship between study time and performance')
+plt.xlabel('Study time')
+plt.ylabel('Performance')
+plt.show()
+
+# Calculate the correlation between study time and performance
+correlation = df['study_time'].corr(df['performance'])
+print('Correlation coefficient:', correlation)
